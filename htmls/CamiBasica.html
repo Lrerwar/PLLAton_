@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/camisetas.css">
+    <style>
+        img {
+            width: 45%;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <main class="containner">
+            <figure class="avatar">
+                <img class="body" src="/img/basica/corpoBranco.png" alt="corpo">
+                <img class="tira" src="/img/basica/tiraBranca.png" alt="tira">
+                <img class="pessoa" src="/img/basica/corpoPessoa.png" alt="pessoa">
+                <img class="logo" src="/img/basica/logo.png" alt="logo">
+
+            </figure>
+            <div>
+
+                <form>
+                    <label for="tamanho">TM</label>
+                    <select id="tamanho" name="tamanho">
+                        <option value="PP">PP</option>
+                        <option value="P">P</option>
+                        <option value="M">M</option>
+                        <option value="G">GG</option>
+                        <option value="GG">GG</option>
+                        <option value="XGG">XGG</option>
+                        <option value="XGG1">xGG1</option>
+                        <option value="XGG2">XGG2</option>
+                    </select>
+
+                    <br>
+                    <label for="CorCorpo">cor corpo</label>
+                    <select id="CorCorpo" name="CorCorpo">
+                        <option value="Branco">Branco</option>
+                        <option value="Amarelo">Amarelo</option>
+                    </select>
+
+                    <br>
+
+                    <label for="CorTira">cor tira</label>
+                    <select id="CorTira" name="CorTira">
+                        <option value="Branco">Branco</option>
+                        <option value="Amarelo">Amarelo</option>
+                    </select>
+                    <br>
+                    
+                    <select id="logo" name="logo">
+                        <option value="Clogo">com logo</option>
+                        <option value="Nlogo">sem logo</option>
+                    </select>
+                </form>
+                <label >R$20,00</label>
+
+            </div>
+        </main>
+    </div>
+
+    <script>
+        var tamanho = document.getElementsByTagName('select')[0]
+        var CorCorpo = document.getElementsByTagName('select')[1]
+        var CorTira = document.getElementsByTagName('select')[2]
+        var logo = document.getElementsByTagName('select')[3]
+        var CorCorpoImg = "corpoBranco"
+        var CorTiraImg = "tiraBranca"
+        var Tlogo = "logo"
+        var preco = 20
+        tamanho.addEventListener("change", atualizar);
+        CorCorpo.addEventListener("change", atualizar);
+        CorTira.addEventListener("change", atualizar);
+        logo.addEventListener("change", atualizar);
+        atualizar()
+
+
+
+
+
+        function atualizar() {
+
+
+
+            let produto = ''
+
+            switch (CorCorpo.value) {
+                case "Branco": CorCorpoImg = "corpoBranco"
+                    break;
+                case "Amarelo": CorCorpoImg = "corpoAmarelo"
+                    break;
+                default:
+            }
+
+            switch (CorTira.value) {
+                case "Branco": CorTiraImg = "tiraBranca"
+                    break;
+                case "Amarelo": CorTiraImg = "tiraAmarela"
+                    break;
+                default:
+            }
+
+
+            if (logo.value === "Clogo") {
+                Tlogo = "logo";
+                preco += 3
+            } else {
+                Tlogo = "naologo"
+            }
+
+
+            produto = ` <img class="body" src="/img/basica/${CorCorpoImg}.png" alt="corpo">
+                <img class="tira" src="/img/basica/${CorTiraImg}.png" alt="tira">
+                <img class="pessoa" src="/img/basica/corpoPessoa.png" alt="pessoa">
+                <img class="logo" src="/img/basica/${Tlogo}.png" alt="logo">
+            `
+
+
+
+            document.getElementsByTagName('figure')[0].innerHTML = produto
+
+            if (tamanho.value === "XGG" || tamanho.value === "XGG1" || tamanho.value === "XGG2") {
+                preco += 5
+            }
+
+            if (CorCorpoImg !== "corpoBranco") {
+
+                preco += 7
+            }
+
+            if (CorCorpo.value !== CorTira.value) {
+                preco += 2
+            }
+            document.getElementsByTagName('label')[3].innerHTML = "R$" + preco + ",00"
+            preco = 20
+
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>

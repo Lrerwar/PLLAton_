@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    font-size: 100%;
+    
+}
+
+
+
+.containner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.containner figure.avatar{
+    width: 600px;
+    height: 300px;
+    box-shadow: 0 0 15px black;
+    
+}
+
+label,select{
+    font-size: 15px;
+    border-radius: 20px;
+    text-align: center;
+    background-color: blue;    
+    color: white;
+    margin-bottom: 9%;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+}
+
+
+
+
+.containner figure.avatar img{
+    position: absolute;
+    
+}
+
+
+
+button{
+    font-size: 40px;
+    width: 100px;
+    height: 60px;
+}
+
+
+
