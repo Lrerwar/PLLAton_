@@ -19,7 +19,7 @@
     <div>
         <main class="containner">
             <figure class="avatar">
-                <img class="body" src="img/basica/corpoBranco.png" alt="corpo">
+                <img class="body" src="img/basica/1branco.png" alt="corpo">
                 <img class="tira" src="img/basica/tiraBranca.png" alt="tira">
                 <img class="pessoa" src="img/basica/corpoPessoa.png" alt="pessoa">
                 <img class="logo" src="img/basica/logo.png" alt="logo">
@@ -44,7 +44,14 @@
                     <label for="CorCorpo">cor corpo</label>
                     <select id="CorCorpo" name="CorCorpo">
                         <option value="Branco">Branco</option>
+                        <option value="Cinza">Cinza</option>
+                        <option value="Celeste">Azul celeste</option>
+                        <option value="Verde">Verde</option>
                         <option value="Amarelo">Amarelo</option>
+                        <option value="Laranja">Laranja</option>
+                        <option value="Vermelho">Vermelho</option>
+                        <option value="Rosa">Rosa</option>
+                        <option value="Dourado">Dourado</option>
                     </select>
 
                     <br>
@@ -55,16 +62,16 @@
                         <option value="Amarelo">Amarelo</option>
                     </select>
                     <br>
-                    
+
                     <select id="logo" name="logo">
                         <option value="Clogo">com logo</option>
                         <option value="Nlogo">sem logo</option>
                     </select>
                 </form>
-                <label >R$20,00</label>
+                <label>R$20,00</label>
 
             </div>
-        </main>
+        
     </div>
 
     <script>
@@ -72,7 +79,7 @@
         var CorCorpo = document.getElementsByTagName('select')[1]
         var CorTira = document.getElementsByTagName('select')[2]
         var logo = document.getElementsByTagName('select')[3]
-        var CorCorpoImg = "corpoBranco"
+        var CorCorpoImg = "1branco"
         var CorTiraImg = "tiraBranca"
         var Tlogo = "logo"
         var preco = 20
@@ -93,9 +100,23 @@
             let produto = ''
 
             switch (CorCorpo.value) {
-                case "Branco": CorCorpoImg = "corpoBranco"
+                case "Branco": CorCorpoImg = "1branco"
                     break;
-                case "Amarelo": CorCorpoImg = "corpoAmarelo"
+                case "Cinza": CorCorpoImg = "2cinza"
+                    break;
+                case "Celeste": CorCorpoImg = "3celeste"
+                    break;
+                case "Verde": CorCorpoImg = "4verde"
+                    break;
+                case "Amarelo": CorCorpoImg = "5amarelo"
+                    break;
+                case "Laranja": CorCorpoImg = "6laranja"
+                    break;
+                case "Vermelho": CorCorpoImg = "7vermelho"
+                    break;
+                case "Rosa": CorCorpoImg = "8rosa"
+                    break;
+                case "Dourado": CorCorpoImg = "9dourado"
                     break;
                 default:
             }
@@ -131,7 +152,7 @@
                 preco += 5
             }
 
-            if (CorCorpoImg !== "corpoBranco") {
+            if (CorCorpoImg !== "1branco") {
 
                 preco += 7
             }
