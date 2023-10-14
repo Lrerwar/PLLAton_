@@ -22,7 +22,7 @@
 .containner figure.avatar{
     min-width: 50%;
     height: 50%;
-    box-shadow: 0 0 15px black;
+   /* box-shadow: 0 0 15px black;*/
   
     
     /*.containner figure.avatar {
@@ -76,11 +76,15 @@ button{
     .containner figure.avatar {
         width: 100%;
         max-width: 350px; 
-        box-shadow: 0 0 15px black;
+        
         position: relative; /* Defina o posicionamento relativo para que os elementos filhos possam ser posicionados em relação a ele */
     }
     
    
 }
 
+figure{
+    margin-bottom: 8%;
+    margin-right: 0%;
+}
 
