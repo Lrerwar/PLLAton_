@@ -5,131 +5,264 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luan</title>
+    <title>Pllaton</title>
     <link rel="icon" href="imagens/1.png">
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-        body {
-            background-image: url(imagens/fundoPLLA.png);
-            background-repeat: no-repeat;
-            background-size: 100%;
-        }
-
-        li {
-            padding: 0px;
-            margin: 0px;
-            display: inline;
-        }
-
-        #selecao {
-            text-decoration: none;
-            background-color: rgb(255, 255, 255);
-           /* color: black;*/
-            padding: 5px;
-            border-radius: 20px;
-        }
-
-        header,
-        .rodape{
-           /* background-color: rgb(0, 0, 0);*/
-            display: flex;
-            margin-right: 60px;
-            margin-left: 0px;
-            border-bottom: 0px;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        h1 {
-            color: white;
-        }
-
-        .RSociais{
-           width: 75px;
-           height: 75px;
-        }
-
-        footer{
-            background-color: black;
-            
-        }
-
-        a{
-            text-decoration: none;
-        }
-
-        footer {
-          /*  background-color: black;*/
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        @media screen and (max-width: 700px) {
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="htmls/css/index.css">
 
 
-      .rodape,.RSociais {   
-        margin-right: 0px;
-        display: flex;
-        flex-direction: row;
-        margin-bottom: 0;
-  }
-}
 
-#pllaton{
-    width: 40%;
-    margin-top: 5%;
-    margin-left: 22%;
-    margin-bottom: -3%;
-}
-
-main{
-    margin-top: 0;
-    margin-bottom: 10%;
-}
-
-        
-    </style>
 </head>
 
 <body>
     <header>
-
-        <img src="imagens/pllatonTexto.png" alt="pllaton" id="pllaton">
-    <!--
-
-        <a href="index.html" id="LOGO">
-           
-            <img src="imagens/1.png" width="75" height="75">
-        
-        </a>
-
-        <a href="index.html">
-             <h1 style="color: white;text-decoration: none;font-size: 10%;">a</h1>
-        
-            </a>
-
-        <a href="htmls/index.html" id="LOGO">
-            
-
-                <img src="imagens/login.png" width="75" height="75">
-            </a>
-        -->
-
+        <img src="imagens/textoPllaton.png" alt="pllaton" id="pllaton">
     </header>
 
+    <div>
 
-   
+
+        <main class="containner">
+            <figure class="avatar">
+                <!-- local onde fica as imagens (escrito por js)-->
+
+            </figure>
+
+            <div>
+
+                <form id="formulario">
+                    <label for="tamanho">TM</label>
+                    <select id="tamanho" name="tamanho">
+                        <option value="PP">PP</option>
+                        <option value="P">P</option>
+                        <option value="M">M</option>
+                        <option value="G">GG</option>
+                        <option value="GG">GG</option>
+                        <option value="XGG">XGG</option>
+                        <option value="XGG1">xGG1</option>
+                        <option value="XGG2">XGG2</option>
+                    </select>
+
+                    <br>
+                    <label for="CorCorpo">cor corpo</label>
+                    <select id="CorCorpo" name="CorCorpo">
+                        <option value="Branco">Branco</option>
+                        <option value="Cinza">Cinza</option>
+                        <option value="Celeste">Azul celeste</option>
+                        <option value="Verde">Verde</option>
+                        <option value="Amarelo">Amarelo</option>
+                        <option value="Laranja">Laranja</option>
+                        <option value="Vermelho">Vermelho</option>
+                        <option value="Rosa">Rosa</option>
+                        <option value="Dourado">Dourado</option>
+                    </select>
+
+                    <br>
+
+                    <label for="CorTira">cor tira</label>
+                    <select id="CorTira" name="CorTira">
+                        <option value="Branco">Branco</option>
+                        <option value="Amarelo">Amarelo</option>
+                        <option value="bic">bic</option>
+                        <option value="celeste">celeste</option>
+                        <option value="Cinza">Cinza</option>
+                        <option value="Dourado">Dourado</option>
+                        <option value="Laranja">Laranja</option>
+                        <option value="Marinho">Marinho</option>
+                        <option value="Preto">Preto</option>
+                        <option value="Rosa">Rosa</option>
+                        <option value="Rosa">Rosa</option>
+                        <option value="Verde">Verde</option>
+                        <option value="Vermelho">Vermelho</option>
+                    </select>
+                    <br>
+
+                    <select id="logo" name="logo">
+                        <option value="Clogo">com logo</option>
+                        <option value="Nlogo">sem logo</option>
+                    </select>
+
+                    
+                </form>
+
+                <label>R$20,00</label>
+
+
+            </div>
+        </main>
+
+    </div>
+
+    <script>
+
+        var tamanho = document.getElementsByTagName('select')[0]
+        var CorCorpo = document.getElementsByTagName('select')[1]
+        var CorTira = document.getElementsByTagName('select')[2]
+        var logo = document.getElementsByTagName('select')[3]
+        var CorCorpoImg = "1branco"
+        var CorTiraImg = "tiraBranca"
+        var Tlogo = "logo"
+        var preco = 20
+        tamanho.addEventListener("change", atualizar);
+        CorCorpo.addEventListener("change", atualizar);
+        CorTira.addEventListener("change", atualizar);
+        logo.addEventListener("change", atualizar);
+        atualizar()
+
+
+
+
+
+
+
+        function atualizar() {
+            let produto = ''
+
+            if (logo.value === "Clogo") {
+                Tlogo = "logo";
+                preco += 3
+            } else {
+                Tlogo = "naologo"
+            }
+
+
+            produto = ` 
+            
+           
+            <div class="images-container">
+    <img class="tira" src="htmls/img/basica/tiras/${CorTira.value}.png" alt="tira">
+    <img class="pessoa" src="htmls/img/basica/corpoPessoa.png" alt="pessoa">
+    <img class="body" src="htmls/img/basica/corpo/${CorCorpo.value}.png" alt="corpo">
+</div>
+
+<label class="picture"  tabIndex="0">
+    <span class="picture__image">                   
+        <img src="htmls/img/basica/logo.png" alt="logo">
+    </span>
+</label>
+<input type="file" accept="image/*" name="picture__input" id="picture__input" class="picture2">
+
+
+                
+                
+                
+                `
+
+               
+            // <img class="logo" src="htmls/img/basica/${Tlogo}.png" alt="logo">
+
+
+
+            document.getElementsByTagName('figure')[0].innerHTML = produto
+
+            if (tamanho.value === "XGG" || tamanho.value === "XGG1" || tamanho.value === "XGG2") {
+                preco += 5
+            }
+
+            if (CorCorpoImg !== "1branco") {
+
+                preco += 7
+            }
+
+            if (CorCorpo.value !== CorTira.value) {
+                preco += 2
+            }
+            document.getElementsByTagName('label')[3].innerHTML = "R$" + preco + ",00"
+            preco = 20
+
+            
+            
+            arquivo()
+            
+        }
+
+
+
+        function arquivo() {
+
+            const inputFile = document.querySelector("#picture__input");
+            const pictureImage = document.querySelector(".picture__image");
+            const pictureImageTxt = "enviar imagen";
+            pictureImage.innerHTML = pictureImageTxt;
+
+            
+            inputFile.addEventListener("change", function (e) {
+                const inputTarget = e.target;
+                const file = inputTarget.files[0];
+
+                if (file) {
+                    const reader = new FileReader();
+
+                    reader.addEventListener("load", function (e) {
+                        const readerTarget = e.target;
+
+                        const img = document.createElement("img");
+                        img.src = readerTarget.result;
+                        img.classList.add("picture__img");
+
+                        pictureImage.innerHTML = "";
+                        pictureImage.appendChild(img);
+                    });
+
+                    reader.readAsDataURL(file);
+                } 
+
+
+            });
+
+          
        
- 
 
-    <main>
-        <iframe src="htmls/CamiBasica.html" name="main" style="height: 400px; width: 100%;border: 0cm;"></iframe>
-    </main>
+        }
 
-    <footer >
         
+
+        var pictureElement = document.querySelector('.picture');
+var isDragging = false;
+var offsetX, offsetY;
+
+// Adicionar suporte a eventos de toque
+pictureElement.addEventListener('mousedown', startDragging);
+pictureElement.addEventListener('touchstart', startDragging);
+
+document.addEventListener('mousemove', drag);
+document.addEventListener('touchmove', drag);
+
+document.addEventListener('mouseup', stopDragging);
+document.addEventListener('touchend', stopDragging);
+
+function startDragging(e) {
+    isDragging = true;
+
+    // Calcular a diferença entre a posição do cursor e o centro da imagem
+    offsetX = e.clientX || e.touches[0].clientX - pictureElement.getBoundingClientRect().left - pictureElement.offsetWidth / 2;
+    offsetY = e.clientY || e.touches[0].clientY - pictureElement.getBoundingClientRect().top - pictureElement.offsetHeight / 2;
+}
+
+function drag(e) {
+    if (!isDragging) return;
+
+    // Calcular a posição do toque ou cursor
+    var clientX = e.clientX || e.touches[0].clientX;
+    var clientY = e.clientY || e.touches[0].clientY;
+
+    // Atualizar a posição da imagem centralizando-a em relação ao cursor ou toque
+    pictureElement.style.left = clientX - offsetX - pictureElement.offsetWidth * 0 + 'px';
+    pictureElement.style.top = clientY - offsetY - pictureElement.offsetHeight * 0 + 'px';
+}
+
+function stopDragging() {
+    isDragging = false;
+}
+    </script>
+
+
+
+
+
+
+    <footer>
 
         <div class="rodape">
             <a
@@ -144,21 +277,12 @@ main{
             <a href="https://www.facebook.com/pauloxcardosoneto">
                 <img src="imagens/face.png" class="RSociais" alt="">
             </a>
-
-
         </div>
 
-       
-   
-
-    <div  >
-     <h2 style="color: white; padding-left: 36%;background-color:black;" >&copy feito por Luan</h2>
-
-    </div>
-
+        <div>
+            <h2 style="color: white; padding-left: 36%;background-color:black;">&copy feito por Luan</h2>
+        </div>
     </footer>
-
-
 </body>
 
 </html>
