@@ -1,53 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pllaton</title>
-    <link rel="icon" href="imagens/1.png">
+    <title>Meu Site Simples</title>
+    <link rel="stylesheet" href="stilo.css">
+    <link rel="icon" href="imagens/icon.png">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="htmls/css/index.css">
+       
+      
 
-
-
+   
 </head>
-
 <body>
     <header>
-        <img src="imagens/textoPllaton.png" alt="pllaton" id="pllaton">
+        <img src="imagens/logo Pllaton.jpg" alt="Logo" id="logo">
     </header>
 
-    <div>
+    <main>
+        <div id="imagem-container">
+            <img src="imagens/basica/corpoPessoa.png" alt="Imagem Principal" id="imagemPrincipal">
+            <img src="imagens/basica/corpo/cinza.png" alt="Sobreposição 1" id="sobreposicao1">
+            <img src="imagens/basica/tira/amarelo.png" alt="Sobreposição 2" id="sobreposicao2">
+        </div>
 
+        <button id="uploadBtn">Carregar Imagem</button>
+        <input type="file" id="fileInput" accept="image/*">
 
-        <main class="containner">
-            <figure class="avatar">
-                <!-- local onde fica as imagens (escrito por js)-->
+        <label for="size">Choose a Size:</label>
+        <select id="size" onchange="updateImage()">
+            <option value="PP">PP</option>
+            <option value="P">P</option>
+            <option value="M">M</option>
+            <option value="G">GG</option>
+            <option value="GG">GG</option>
+            <option value="XGG">XGG</option>
+            <option value="XGG1">xGG1</option>
+            <option value="XGG2">XGG2</option>
+        </select>
 
-            </figure>
-
-            <div>
-
-                <form id="formulario">
-                    <label for="tamanho">TM</label>
-                    <select id="tamanho" name="tamanho">
-                        <option value="PP">PP</option>
-                        <option value="P">P</option>
-                        <option value="M">M</option>
-                        <option value="G">GG</option>
-                        <option value="GG">GG</option>
-                        <option value="XGG">XGG</option>
-                        <option value="XGG1">xGG1</option>
-                        <option value="XGG2">XGG2</option>
-                    </select>
-
-                    <br>
-                    <label for="CorCorpo">cor corpo</label>
-                    <select id="CorCorpo" name="CorCorpo">
-                        <option value="Branco">Branco</option>
+        <label for="colorC">Choose a Color:</label>
+        <select id="colorC" onchange="updateImage()">
+            <option value="Branco">Branco</option>
+            <option value="Cinza">Cinza</option>
+            <option value="Celeste">Azul celeste</option>
+            <option value="Verde">Verde</option>
+            <option value="Amarelo">Amarelo</option>
+            <option value="Laranja">Laranja</option>
+            <option value="Vermelho">Vermelho</option>
+            <option value="Rosa">Rosa</option>
+            <option value="Dourado">Dourado</option>
+        </select>
+        <label for="colorT">Choose a Color:</label>
+        <select id="colorT" onchange="updateImage()">
+            <option value="Branco">Branco</option>
                         <option value="Cinza">Cinza</option>
                         <option value="Celeste">Azul celeste</option>
                         <option value="Verde">Verde</option>
@@ -56,233 +63,136 @@
                         <option value="Vermelho">Vermelho</option>
                         <option value="Rosa">Rosa</option>
                         <option value="Dourado">Dourado</option>
-                    </select>
+        </select>
 
-                    <br>
+        <!-- Novos botões -->
+        <button id="moveLeftBtn">←</button>
+        <button id="moveDownBtn">↓</button>
+        <button id="moveUpBtn">↑</button>
+        <button id="moveRightBtn">→</button>
 
-                    <label for="CorTira">cor tira</label>
-                    <select id="CorTira" name="CorTira">
-                        <option value="Branco">Branco</option>
-                        <option value="Amarelo">Amarelo</option>
-                        <option value="bic">bic</option>
-                        <option value="celeste">celeste</option>
-                        <option value="Cinza">Cinza</option>
-                        <option value="Dourado">Dourado</option>
-                        <option value="Laranja">Laranja</option>
-                        <option value="Marinho">Marinho</option>
-                        <option value="Preto">Preto</option>
-                        <option value="Rosa">Rosa</option>
-                        <option value="Rosa">Rosa</option>
-                        <option value="Verde">Verde</option>
-                        <option value="Vermelho">Vermelho</option>
-                    </select>
-                    <br>
-
-                    <select id="logo" name="logo">
-                        <option value="Clogo">com logo</option>
-                        <option value="Nlogo">sem logo</option>
-                    </select>
-
-                    
-                </form>
-
-                <label>R$20,00</label>
-
-
-            </div>
-        </main>
-
-    </div>
-
-    <script>
-
-        var tamanho = document.getElementsByTagName('select')[0]
-        var CorCorpo = document.getElementsByTagName('select')[1]
-        var CorTira = document.getElementsByTagName('select')[2]
-        var logo = document.getElementsByTagName('select')[3]
-        var CorCorpoImg = "1branco"
-        var CorTiraImg = "tiraBranca"
-        var Tlogo = "logo"
-        var preco = 20
-        tamanho.addEventListener("change", atualizar);
-        CorCorpo.addEventListener("change", atualizar);
-        CorTira.addEventListener("change", atualizar);
-        logo.addEventListener("change", atualizar);
-        atualizar()
-
-
-
-
-
-
-
-        function atualizar() {
-            let produto = ''
-
-            if (logo.value === "Clogo") {
-                Tlogo = "logo";
-                preco += 3
-            } else {
-                Tlogo = "naologo"
-            }
-
-
-            produto = ` 
-            
-           
-            <div class="images-container">
-    <img class="tira" src="htmls/img/basica/tiras/${CorTira.value}.png" alt="tira">
-    <img class="pessoa" src="htmls/img/basica/corpoPessoa.png" alt="pessoa">
-    <img class="body" src="htmls/img/basica/corpo/${CorCorpo.value}.png" alt="corpo">
-</div>
-
-<label class="picture"  tabIndex="0">
-    <span class="picture__image">                   
-        <img src="htmls/img/basica/logo.png" alt="logo">
-    </span>
-</label>
-<input type="file" accept="image/*" name="picture__input" id="picture__input" class="picture2">
-
-
-                
-                
-                
-                `
-
-               
-            // <img class="logo" src="htmls/img/basica/${Tlogo}.png" alt="logo">
-
-
-
-            document.getElementsByTagName('figure')[0].innerHTML = produto
-
-            if (tamanho.value === "XGG" || tamanho.value === "XGG1" || tamanho.value === "XGG2") {
-                preco += 5
-            }
-
-            if (CorCorpoImg !== "1branco") {
-
-                preco += 7
-            }
-
-            if (CorCorpo.value !== CorTira.value) {
-                preco += 2
-            }
-            document.getElementsByTagName('label')[3].innerHTML = "R$" + preco + ",00"
-            preco = 20
-
-            
-            
-            arquivo()
-            
-        }
-
-
-
-        function arquivo() {
-
-            const inputFile = document.querySelector("#picture__input");
-            const pictureImage = document.querySelector(".picture__image");
-            const pictureImageTxt = "enviar imagen";
-            pictureImage.innerHTML = pictureImageTxt;
-
-            
-            inputFile.addEventListener("change", function (e) {
-                const inputTarget = e.target;
-                const file = inputTarget.files[0];
-
-                if (file) {
-                    const reader = new FileReader();
-
-                    reader.addEventListener("load", function (e) {
-                        const readerTarget = e.target;
-
-                        const img = document.createElement("img");
-                        img.src = readerTarget.result;
-                        img.classList.add("picture__img");
-
-                        pictureImage.innerHTML = "";
-                        pictureImage.appendChild(img);
-                    });
-
-                    reader.readAsDataURL(file);
-                } 
-
-
-            });
-
-          
-       
-
-        }
+        <button id="increaseSizeBtn">Aumentar Tamanho</button>
+        <button id="decreaseSizeBtn">Diminuir Tamanho</button>
 
         
-
-        var pictureElement = document.querySelector('.picture');
-var isDragging = false;
-var offsetX, offsetY;
-
-// Adicionar suporte a eventos de toque
-pictureElement.addEventListener('mousedown', startDragging);
-pictureElement.addEventListener('touchstart', startDragging);
-
-document.addEventListener('mousemove', drag);
-document.addEventListener('touchmove', drag);
-
-document.addEventListener('mouseup', stopDragging);
-document.addEventListener('touchend', stopDragging);
-
-function startDragging(e) {
-    isDragging = true;
-
-    // Calcular a diferença entre a posição do cursor e o centro da imagem
-    offsetX = e.clientX || e.touches[0].clientX - pictureElement.getBoundingClientRect().left - pictureElement.offsetWidth / 2;
-    offsetY = e.clientY || e.touches[0].clientY - pictureElement.getBoundingClientRect().top - pictureElement.offsetHeight / 2;
-}
-
-function drag(e) {
-    if (!isDragging) return;
-
-    // Calcular a posição do toque ou cursor
-    var clientX = e.clientX || e.touches[0].clientX;
-    var clientY = e.clientY || e.touches[0].clientY;
-
-    // Atualizar a posição da imagem centralizando-a em relação ao cursor ou toque
-    pictureElement.style.left = clientX - offsetX - pictureElement.offsetWidth * 0 + 'px';
-    pictureElement.style.top = clientY - offsetY - pictureElement.offsetHeight * 0 + 'px';
-}
-
-function stopDragging() {
-    isDragging = false;
-}
-    </script>
-
-
-
-
-
-
+        <button id="DiminuirH">↓↑</button>
+        <button id="DiminuirV">→←</button>
+    </main>
     <footer>
-
-        <div class="rodape">
-            <a
-                href="https://api.whatsapp.com/send?phone=%2B5547996736113&data=ARCYJLdG0CKPcUlaEhMyt8dfyFd3rEEEZ7yoNjBL6uh76IeCcrUZyFGS3BQxhG5dcyIPZB0I8JOmvhm5anDdTq6omrApUm7OPEcocnwu8S7LJy5wLy14hbWmNfPt4OkbwzxyOMI4-HoCfa32Bgbw0Tl3Cg&source=FB_Page&app=facebook&entry_point=page_cta&fbclid=IwAR0eD5LgvVukb7WzLPhKocGDdP6lOvprPS8D11YJnysH09U_xstqkckCn7s">
-                <img src="imagens/watts.png" class="RSociais" alt="">
-            </a>
-
-            <a href="https://www.instagram.com/pllaton14/">
-                <img src="imagens/insta.png" class="RSociais" alt="">
-            </a>
-
-            <a href="https://www.facebook.com/pauloxcardosoneto">
-                <img src="imagens/face.png" class="RSociais" alt="">
-            </a>
-        </div>
-
-        <div>
-            <h2 style="color: white; padding-left: 36%;background-color:black;">&copy feito por Luan</h2>
-        </div>
+        © 2024 Meu Site Simples
     </footer>
+
+
+    <script>
+        let imagemCarregada; // Variável para armazenar a imagem carregada
+
+document.getElementById('uploadBtn').addEventListener('click', function () {
+    document.getElementById('fileInput').click();
+});
+
+document.getElementById('fileInput').addEventListener('change', function (event) {
+    const file = event.target.files[0];
+    if (file) {
+        const imageUrl = URL.createObjectURL(file);
+        imagemCarregada = document.createElement('img');
+        imagemCarregada.src = imageUrl;
+        imagemCarregada.alt = 'Imagem Carregada';
+        imagemCarregada.className = 'sobreposicao'; // Aplica a mesma classe das sobreposições existentes
+        document.getElementById('imagem-container').appendChild(imagemCarregada);
+    }
+});
+
+// Adicionando funcionalidade aos novos botões para movimentação
+document.getElementById('moveLeftBtn').addEventListener('click', function () {
+    moveImage(imagemCarregada, -4, 0);
+});
+
+document.getElementById('moveRightBtn').addEventListener('click', function () {
+    moveImage(imagemCarregada, 4, 0);
+});
+
+document.getElementById('moveUpBtn').addEventListener('click', function () {
+    moveImage(imagemCarregada, 0, -4);
+});
+
+document.getElementById('moveDownBtn').addEventListener('click', function () {
+    moveImage(imagemCarregada, 0, 4);
+});
+
+// Adicionando funcionalidade aos novos botões para alterar o tamanho
+document.getElementById('increaseSizeBtn').addEventListener('click', function () {
+    changeImageSize(imagemCarregada, 'increase');
+});
+
+document.getElementById('decreaseSizeBtn').addEventListener('click', function () {
+    changeImageSize(imagemCarregada, 'decrease');
+});
+
+document.getElementById('DiminuirV').addEventListener('click', function () {
+    changeImageSize(imagemCarregada, 'DV');
+});
+
+document.getElementById('DiminuirH').addEventListener('click', function () {
+    changeImageSize(imagemCarregada, 'DH');
+});
+
+// Função para mover a imagem
+function moveImage(imagem, x, y) {
+    if (imagem) {
+        const currentPosition = getComputedStyle(imagem);
+        const currentLeft = parseInt(currentPosition.left) || 0;
+        const currentTop = parseInt(currentPosition.top) || 0;
+        imagem.style.left = currentLeft + x + 'px';
+        imagem.style.top = currentTop + y + 'px';
+    }
+}
+
+// Função para alterar o tamanho da imagem
+function changeImageSize(imagem, direction) {
+    if (imagem) {
+        const currentWidth = imagem.width;
+        const currentHeight = imagem.height;
+        let newWidth, newHeight;
+
+        if (direction === 'increase') {
+            
+                newWidth = currentWidth * 1.1;
+                newHeight = currentHeight * 1.1;
+           
+        } else if (direction === 'decrease') {
+            newWidth = currentWidth * 0.9;
+            newHeight = currentHeight * 0.9;
+        }else if (direction === 'DV') {
+            newWidth = currentWidth * 0.9;
+            newHeight = currentHeight * 1;
+        }else if (direction === 'DH') {
+            newWidth = currentWidth * 1;
+            newHeight = currentHeight * 0.9;
+        }
+
+       
+
+        imagem.width = newWidth;
+        imagem.height = newHeight;
+    }
+}
+
+function updateImage() {
+            var colorC = document.getElementById("colorC").value;
+            var colorT = document.getElementById("colorT").value;
+            var size = document.getElementById("size").value;
+            
+            // Update the image source based on the selected color and size
+            var imagePathC = "imagens/basica/corpo/" + colorC + ".png";
+            var imagePathT = "imagens/basica/tira/" + colorT + ".png";
+            
+            // Update the image element
+            document.getElementById("sobreposicao1").src = imagePathC;
+            document.getElementById("sobreposicao2").src = imagePathT;
+        }
+
+
+    </script>
 </body>
 
 </html>

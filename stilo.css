@@ -1,0 +1,128 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgb(105, 105, 105);
+}
+
+
+
+header {
+    width: 100%;
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+}
+
+#logo {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    
+}
+
+main {
+    padding: 20px;
+    position: relative;
+}
+
+#imagemPrincipal{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    position: absolute;
+}
+
+#sobreposicao1,
+#sobreposicao2{
+    position: absolute;
+    width: 100vw;
+    max-width: 100vw;
+    height: auto;
+}
+.sobreposicao {
+    position: absolute;
+    mix-blend-mode: multiply;
+    max-width: 20vw;
+    max-height: 20vw;
+    aspect-ratio: auto;
+}
+
+
+#imagem-container{
+    margin-bottom: 70%;
+}
+
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+}
+
+input[type="color"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+}
+
+#uploadBtn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#fileInput {
+    display: none;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#moveLeftBtn,#moveRightBtn,#moveUpBtn,#moveDownBtn{
+    width: 21vw;
+    height: 20vw;
+}
+
+#increaseSizeBtn,#decreaseSizeBtn,#DiminuirH,#DiminuirV{
+    
+   width: 43.3vw;
+   height: 20vw;
+}
+
+#DiminuirH,#DiminuirV
+{
+    margin-bottom: 20vw;
+}
+
+
+#increaseSizeBtn,#decreaseSizeBtn,#moveLeftBtn,#moveRightBtn,#moveUpBtn,#moveDownBtn,#DiminuirH,#DiminuirV{
+
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid #353535;
+    border-radius: 5px;
+    color: #3b3b3b;
+    background-color: #ffffff;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
