@@ -126,3 +126,79 @@ footer {
     background-color: #ffffff;
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
+
+
+@media only screen and (min-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    header {
+        padding: 20px;
+    }
+
+    main {
+        padding: 40px;
+    }
+
+    #imagemPrincipal{
+        width: 40vw;
+        max-width: 40vw;
+        height: auto;
+        
+    }
+    
+    #sobreposicao1,
+    #sobreposicao2{
+        position: absolute;
+        width: 40vw;
+        max-width: 40vw;
+        height: auto;
+    }
+    .sobreposicao {
+        position: absolute;
+        mix-blend-mode: multiply;
+        max-width: 20vw;
+        max-height: 20vw;
+        aspect-ratio: auto;
+    }
+
+    #imagem-container {
+        margin-bottom: 10%;
+    }
+
+    select,
+    input[type="color"],
+    #uploadBtn {
+        margin-top: 0vw;
+        
+    }
+
+    #uploadBtn{
+        margin-top: 20vw;
+    }
+
+    #moveLeftBtn,
+    #moveRightBtn,
+    #moveUpBtn,
+    #moveDownBtn,
+    #increaseSizeBtn,
+    #decreaseSizeBtn,
+    #DiminuirH,
+    #DiminuirV {
+        width: auto;
+        height: auto;
+    }
+    
+    #DiminuirH,
+    #DiminuirV {
+        margin-bottom: 0;
+    }
+}
+    
+#logo {
+    width: 25%;
+    max-width: 25%;
+    height: auto;
+    
+}
