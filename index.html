@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site Simples</title>
+    <link rel="stylesheet" href="stilo.css">
+    <link rel="icon" href="imagens/icon.png">
+
+       
+      
+
+   
+</head>
+<body>
+    <header>
+        <img src="imagens/logo Pllaton.jpg" alt="Logo" id="logo">
+    </header>
+
+    <main>
+        <div id="imagem-container">
+            <img src="imagens/basica/corpoPessoa.png" alt="Imagem Principal" id="imagemPrincipal">
+            <img src="imagens/basica/corpo/cinza.png" alt="Sobreposição 1" id="sobreposicao1">
+            <img src="imagens/basica/tira/amarelo.png" alt="Sobreposição 2" id="sobreposicao2">
+        </div>
+
+        <button id="uploadBtn">Carregar Imagem</button>
+        <input type="file" id="fileInput" accept="image/*">
+
+        <label for="size">Choose a Size:</label>
+        <select id="size" onchange="updateImage()">
+            <option value="PP">PP</option>
+            <option value="P">P</option>
+            <option value="M">M</option>
+            <option value="G">GG</option>
+            <option value="GG">GG</option>
+            <option value="XGG">XGG</option>
+            <option value="XGG1">xGG1</option>
+            <option value="XGG2">XGG2</option>
+        </select>
+
+        <label for="colorC">Choose a Color:</label>
+        <select id="colorC" onchange="updateImage()">
+            <option value="Branco">Branco</option>
+            <option value="Cinza">Cinza</option>
+            <option value="Celeste">Azul celeste</option>
+            <option value="Verde">Verde</option>
+            <option value="Amarelo">Amarelo</option>
+            <option value="Laranja">Laranja</option>
+            <option value="Vermelho">Vermelho</option>
+            <option value="Rosa">Rosa</option>
+            <option value="Dourado">Dourado</option>
+        </select>
+        <label for="colorT">Choose a Color:</label>
+        <select id="colorT" onchange="updateImage()">
+            <option value="Branco">Branco</option>
+                        <option value="Cinza">Cinza</option>
+                        <option value="Celeste">Azul celeste</option>
+                        <option value="Verde">Verde</option>
+                        <option value="Amarelo">Amarelo</option>
+                        <option value="Laranja">Laranja</option>
+                        <option value="Vermelho">Vermelho</option>
+                        <option value="Rosa">Rosa</option>
+                        <option value="Dourado">Dourado</option>
+        </select>
+
+        <!-- Novos botões -->
+        <button id="moveLeftBtn">←</button>
+        <button id="moveDownBtn">↓</button>
+        <button id="moveUpBtn">↑</button>
+        <button id="moveRightBtn">→</button>
+
+        <button id="increaseSizeBtn">Aumentar Tamanho</button>
+        <button id="decreaseSizeBtn">Diminuir Tamanho</button>
+
+        
+        <button id="DiminuirH">↓↑</button>
+        <button id="DiminuirV">→←</button>
+    </main>
+    <footer>
+        © 2024 Meu Site Simples
+    </footer>
+
+
+    <script>
+        let imagemCarregada; // Variável para armazenar a imagem carregada
+
+document.getElementById('uploadBtn').addEventListener('click', function () {
+    document.getElementById('fileInput').click();
+});
+
+document.getElementById('fileInput').addEventListener('change', function (event) {
+    const file = event.target.files[0];
+    if (file) {
+        const imageUrl = URL.createObjectURL(file);
+        imagemCarregada = document.createElement('img');
+        imagemCarregada.src = imageUrl;
+        imagemCarregada.alt = 'Imagem Carregada';
+        imagemCarregada.className = 'sobreposicao'; // Aplica a mesma classe das sobreposições existentes
+        document.getElementById('imagem-container').appendChild(imagemCarregada);
+    }
+});
+
+// Adicionando funcionalidade aos novos botões para movimentação
+document.getElementById('moveLeftBtn').addEventListener('click', function () {
+    moveImage(imagemCarregada, -4, 0);
+});
+
+document.getElementById('moveRightBtn').addEventListener('click', function () {
+    moveImage(imagemCarregada, 4, 0);
+});
+
+document.getElementById('moveUpBtn').addEventListener('click', function () {
+    moveImage(imagemCarregada, 0, -4);
+});
+
+document.getElementById('moveDownBtn').addEventListener('click', function () {
+    moveImage(imagemCarregada, 0, 4);
+});
+
+// Adicionando funcionalidade aos novos botões para alterar o tamanho
+document.getElementById('increaseSizeBtn').addEventListener('click', function () {
+    changeImageSize(imagemCarregada, 'increase');
+});
+
+document.getElementById('decreaseSizeBtn').addEventListener('click', function () {
+    changeImageSize(imagemCarregada, 'decrease');
+});
+
+document.getElementById('DiminuirV').addEventListener('click', function () {
+    changeImageSize(imagemCarregada, 'DV');
+});
+
+document.getElementById('DiminuirH').addEventListener('click', function () {
+    changeImageSize(imagemCarregada, 'DH');
+});
+
+// Função para mover a imagem
+function moveImage(imagem, x, y) {
+    if (imagem) {
+        const currentPosition = getComputedStyle(imagem);
+        const currentLeft = parseInt(currentPosition.left) || 0;
+        const currentTop = parseInt(currentPosition.top) || 0;
+        imagem.style.left = currentLeft + x + 'px';
+        imagem.style.top = currentTop + y + 'px';
+    }
+}
+
+// Função para alterar o tamanho da imagem
+function changeImageSize(imagem, direction) {
+    if (imagem) {
+        const currentWidth = imagem.width;
+        const currentHeight = imagem.height;
+        let newWidth, newHeight;
+
+        if (direction === 'increase') {
+            
+                newWidth = currentWidth * 1.1;
+                newHeight = currentHeight * 1.1;
+           
+        } else if (direction === 'decrease') {
+            newWidth = currentWidth * 0.9;
+            newHeight = currentHeight * 0.9;
+        }else if (direction === 'DV') {
+            newWidth = currentWidth * 0.9;
+            newHeight = currentHeight * 1;
+        }else if (direction === 'DH') {
+            newWidth = currentWidth * 1;
+            newHeight = currentHeight * 0.9;
+        }
+
+       
+
+        imagem.width = newWidth;
+        imagem.height = newHeight;
+    }
+}
+
+function updateImage() {
+            var colorC = document.getElementById("colorC").value;
+            var colorT = document.getElementById("colorT").value;
+            var size = document.getElementById("size").value;
+            
+            // Update the image source based on the selected color and size
+            var imagePathC = "imagens/basica/corpo/" + colorC + ".png";
+            var imagePathT = "imagens/basica/tira/" + colorT + ".png";
+            
+            // Update the image element
+            document.getElementById("sobreposicao1").src = imagePathC;
+            document.getElementById("sobreposicao2").src = imagePathT;
+        }
+
+
+    </script>
+</body>
+
+</html>
