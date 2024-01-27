@@ -126,7 +126,10 @@ footer {
     color: #3b3b3b;
     background-color: #ffffff;
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+<<<<<<< HEAD
     
+=======
+>>>>>>> 4c29ee35c2a92395cbb50a70eac22d7f7f1197f6
 }
 
 
@@ -160,8 +163,13 @@ footer {
     .sobreposicao {
         position: absolute;
         mix-blend-mode: multiply;
+<<<<<<< HEAD
         max-width: 7vw;
         max-height: 7vw;
+=======
+        max-width: 20vw;
+        max-height: 20vw;
+>>>>>>> 4c29ee35c2a92395cbb50a70eac22d7f7f1197f6
         aspect-ratio: auto;
     }
 
@@ -170,6 +178,7 @@ footer {
     }
 
     select,
+<<<<<<< HEAD
     input[type="color"] {
         
         width: 30vw;
@@ -195,12 +204,21 @@ footer {
     #ADIV{
         margin-top: -23vw;
         margin-left: 45vw;
+=======
+    input[type="color"],
+    #uploadBtn {
+        margin-top: 0vw;
+        
+>>>>>>> 4c29ee35c2a92395cbb50a70eac22d7f7f1197f6
     }
 
     #uploadBtn{
         margin-top: 20vw;
+<<<<<<< HEAD
         margin-left: 0vw;
         width: 40vw;
+=======
+>>>>>>> 4c29ee35c2a92395cbb50a70eac22d7f7f1197f6
     }
 
     #moveLeftBtn,
@@ -213,13 +231,17 @@ footer {
     #DiminuirV {
         width: auto;
         height: auto;
+<<<<<<< HEAD
         
+=======
+>>>>>>> 4c29ee35c2a92395cbb50a70eac22d7f7f1197f6
     }
     
     #DiminuirH,
     #DiminuirV {
         margin-bottom: 0;
     }
+<<<<<<< HEAD
     
     #logo {
         width: 15vw;
@@ -228,3 +250,13 @@ footer {
         transform: translateX(-42vw);
     }
 }
+=======
+}
+    
+#logo {
+    width: 25%;
+    max-width: 25%;
+    height: auto;
+    
+}
+>>>>>>> 4c29ee35c2a92395cbb50a70eac22d7f7f1197f6
