@@ -15,22 +15,24 @@
 </head>
 <body>
     <header>
-        <img src="imagens/logo Pllaton.jpg" alt="Logo" id="logo">
+        <img src="imagens/logo Pllaton.png" alt="Logo" id="logo">
     </header>
 
     <main>
         <div id="imagem-container">
             <img src="imagens/basica/corpoPessoa.png" alt="Imagem Principal" id="imagemPrincipal">
-            <img src="imagens/basica/corpo/cinza.png" alt="Sobreposição 1" id="sobreposicao1">
-            <img src="imagens/basica/tira/amarelo.png" alt="Sobreposição 2" id="sobreposicao2">
+            <img src="imagens/basica/corpo/branco.png" alt="Sobreposição 1" id="sobreposicao1">
+            <img src="imagens/basica/tira/branco.png" alt="Sobreposição 2" id="sobreposicao2">
         </div>
 
         <button id="uploadBtn">Carregar Imagem</button>
         <input type="file" id="fileInput" accept="image/*">
 
-        <label for="size">Choose a Size:</label>
-        <select id="size" onchange="updateImage()">
-            <option value="PP">PP</option>
+        <div id="ADIV">
+
+            <label for="size">Escolha um tamanho:</label>
+            <select id="size" onchange="updateImage()">
+                <option value="PP">PP</option>
             <option value="P">P</option>
             <option value="M">M</option>
             <option value="G">GG</option>
@@ -39,47 +41,48 @@
             <option value="XGG1">xGG1</option>
             <option value="XGG2">XGG2</option>
         </select>
-
-        <label for="colorC">Choose a Color:</label>
+        <label for="colorC">Escolha uma cor para o corpo:</label>
         <select id="colorC" onchange="updateImage()">
-            <option value="Branco">Branco</option>
-            <option value="Cinza">Cinza</option>
-            <option value="Celeste">Azul celeste</option>
-            <option value="Verde">Verde</option>
-            <option value="Amarelo">Amarelo</option>
-            <option value="Laranja">Laranja</option>
-            <option value="Vermelho">Vermelho</option>
-            <option value="Rosa">Rosa</option>
-            <option value="Dourado">Dourado</option>
+            <option value="branco">branco</option>
+            <option value="cinza">cinza</option>
+            <option value="celeste">celeste</option>
+            <option value="verde">verde</option>
+            <option value="amarelo">amarelo</option>
+            <option value="laranja">laranja</option>
+            <option value="vermelho">vermelho</option>
+            <option value="rosa">rosa</option>
+            <option value="dourado">dourado</option>
         </select>
-        <label for="colorT">Choose a Color:</label>
+        <label for="colorT">Escolha uma cor para o filete</label>
         <select id="colorT" onchange="updateImage()">
-            <option value="Branco">Branco</option>
-                        <option value="Cinza">Cinza</option>
-                        <option value="Celeste">Azul celeste</option>
-                        <option value="Verde">Verde</option>
-                        <option value="Amarelo">Amarelo</option>
-                        <option value="Laranja">Laranja</option>
-                        <option value="Vermelho">Vermelho</option>
-                        <option value="Rosa">Rosa</option>
-                        <option value="Dourado">Dourado</option>
+            <option value="branco">branco</option>
+            <option value="cinza">cinza</option>
+            <option value="celeste">celeste</option>
+            <option value="verde">verde</option>
+            <option value="amarelo">amarelo</option>
+            <option value="laranja">laranja</option>
+            <option value="vermelho">vermelho</option>
+            <option value="rosa">rosa</option>
+            <option value="dourado">dourado</option>
         </select>
-
-        <!-- Novos botões -->
-        <button id="moveLeftBtn">←</button>
-        <button id="moveDownBtn">↓</button>
-        <button id="moveUpBtn">↑</button>
-        <button id="moveRightBtn">→</button>
-
-        <button id="increaseSizeBtn">Aumentar Tamanho</button>
-        <button id="decreaseSizeBtn">Diminuir Tamanho</button>
-
         
-        <button id="DiminuirH">↓↑</button>
-        <button id="DiminuirV">→←</button>
+        <div>
+            <button id="moveLeftBtn">←</button>
+            <button id="moveDownBtn">↓</button>
+            <button id="moveUpBtn">↑</button>
+            <button id="moveRightBtn">→</button>
+        </div>
+
+        <div>
+            <button id="increaseSizeBtn">Aumentar Tamanho</button>
+            <button id="decreaseSizeBtn">Diminuir Tamanho</button>           
+            <button id="DiminuirH">↓↑</button>
+            <button id="DiminuirV">→←</button>
+        </div>
+        </div>
     </main>
     <footer>
-        © 2024 Meu Site Simples
+        © 2024 Meu Site Simples_
     </footer>
 
 

@@ -20,6 +20,7 @@ header {
     max-width: 100%;
     height: auto;
     
+    
 }
 
 main {
@@ -71,7 +72,7 @@ input[type="color"] {
 
 #uploadBtn {
     display: block;
-    width: 100%;
+    
     padding: 10px;
     margin: 10px 0;
     background-color: #4CAF50;
@@ -125,6 +126,7 @@ footer {
     color: #3b3b3b;
     background-color: #ffffff;
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    
 }
 
 
@@ -158,8 +160,8 @@ footer {
     .sobreposicao {
         position: absolute;
         mix-blend-mode: multiply;
-        max-width: 20vw;
-        max-height: 20vw;
+        max-width: 7vw;
+        max-height: 7vw;
         aspect-ratio: auto;
     }
 
@@ -168,14 +170,37 @@ footer {
     }
 
     select,
-    input[type="color"],
-    #uploadBtn {
-        margin-top: 0vw;
+    input[type="color"] {
         
+        width: 30vw;
+        display:list-item;
+       
+       
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        border: 2px solid #353535;
+        border-radius: 5px;
+        color: #000000;
+        background-color: #ffffff;
+        transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        
+        
+    }
+
+    label{
+        color: white;
+    }
+
+    #ADIV{
+        margin-top: -23vw;
+        margin-left: 45vw;
     }
 
     #uploadBtn{
         margin-top: 20vw;
+        margin-left: 0vw;
+        width: 40vw;
     }
 
     #moveLeftBtn,
@@ -188,17 +213,18 @@ footer {
     #DiminuirV {
         width: auto;
         height: auto;
+        
     }
     
     #DiminuirH,
     #DiminuirV {
         margin-bottom: 0;
     }
-}
     
-#logo {
-    width: 25%;
-    max-width: 25%;
-    height: auto;
-    
+    #logo {
+        width: 15vw;
+        max-width: 25vw;
+        height: auto;
+        transform: translateX(-42vw);
+    }
 }
