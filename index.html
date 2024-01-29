@@ -112,7 +112,8 @@ document.getElementById('fileInput').addEventListener('change', function (event)
         imagemCarregada = document.createElement('img');
         imagemCarregada.src = imageUrl;
         imagemCarregada.alt = 'Imagem Carregada';
-        imagemCarregada.className = 'sobreposicao'; // Aplica a mesma classe das sobreposições existentes
+        imagemCarregada.className = 'sobreposicao';
+        imagemCarregada.id = "sob"
         document.getElementById('imagem-container').appendChild(imagemCarregada);
     }
 });

@@ -45,8 +45,8 @@ main {
 .sobreposicao {
     position: absolute;
     mix-blend-mode: multiply;
-    max-width: 20vw;
-    max-height: 20vw;
+    max-width: 2vw;
+    max-height: 0.5vw;
     aspect-ratio: auto;
 }
 
@@ -129,6 +129,11 @@ footer {
 
 }
 
+#sob{
+    max-width: 20vw;
+    max-height: 20vw;
+}
+
 
 @media only screen and (min-width: 768px) {
     body {
@@ -161,8 +166,8 @@ footer {
         position: absolute;
         mix-blend-mode: multiply;
 
-        max-width: 7vw;
-        max-height: 7vw;
+        max-width: 2vw;
+        max-height: 2vw;
 
         max-width: 20vw;
         max-height: 20vw;
@@ -231,8 +236,7 @@ footer {
     }
 }
 
-}
-    
+
 #logo {
     width: 25%;
     max-width: 25%;
@@ -242,4 +246,10 @@ footer {
 
 #uploadBtn{
     margin-top: 20vw;
+}
+
+#sob{
+    max-width: 9vw;
+    max-height: 9vw;
+}
 }
